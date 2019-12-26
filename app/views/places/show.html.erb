@@ -1,0 +1,23 @@
+<h1>This is <%= @place.name %></h1>
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+ 
+
+    <img src=<%=@place.image%> height="400" width="490"><br>
+    <br><p class="display-3"><%= @place.name %> </p>
+    <p class="lead"><%= @place.desc %></p><br>
+    <p class="lead">@ <%= @place.city %> City</p><br>    
+    <iframe src=<%= @place.location %> width="600" height="425" frameborder="0" style="border:0;" allowfullscreen=""></iframe><br>
+    <br>
+    <%if user_signed_in? %>
+      <button>  <%= link_to "Edit", edit_place_path(@place) %> </button>
+      <button>  <%= link_to "Favorite", add_fav_path(@place) %> </button>
+      <button>  <%= link_to "Delete", place_path(@place), method: :delete, data: {confirm: "Are you sure?"}%> </button>
+    <% end %>
+
+    <button> <%= link_to "Back", places_path %> </button>
+   </div>
+   </div>
+   
+    

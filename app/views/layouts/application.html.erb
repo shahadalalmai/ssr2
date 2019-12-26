@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ssr</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:500&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="test">
+  
+  <a class="navbar-brand"> <%= image_tag "sss_logo.png", size: "90x60"%> </a>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", places_path, :class => "nav-link" %>
+
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.gea.gov.sa/en/">GAE</a>
+      </li>
+
+
+      <%if user_signed_in? %>
+          <li class="nav-item">
+                <%= link_to "My Reviews", my_list_path(current_user), :class => "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+                <%= link_to "New Review", new_place_path, :class => "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+                <%= link_to "My Account", edit_user_registration_path, :class => "nav-link" %>
+          </li>
+                
+          <li class="nav-item">
+                <%= link_to "Favorites", my_fav_path, :class => "nav-link" %>
+          </li>
+
+                
+      <% end %>
+
+          <li class="nav-item">
+           <p class="notice n "><%= notice %></p>
+          </li>
+
+          <li class="nav-item">
+           <p class="alert n "><%= alert %></p>
+          </li>
+      
+    </ul>
+
+<%if user_signed_in? %>
+      <h5 id="name">Welcome <%= current_user.name %></h5>
+          <button> <%= link_to "Sign Out", destroy_user_session_path, method: :delete%> </button>
+<% else %>
+    <button><%= link_to "Sign In", new_user_session_path%></button>
+
+<% end %>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <div class="middle">
+    <%= yield %>
+  </div>
+
+  </body>
+
+
+
+<footer id="f" class="text-center py-3 small mb-2 text-secondary"> Copyright © Saudi Seasons Review - Saudi Seasons - General Entertainment Authority </footer>
+
+
+
+</html>

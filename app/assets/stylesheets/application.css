@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/* #white > a{
+    color: white;
+} */
+
+body {
+    font-family: 'Comfortaa', cursive !important;
+    max-height: 100% !important;
+}
+
+h1, h2, h3{
+    color: purple;
+}
+
+#test{
+    max-height: 106px;
+    border-top: 4px solid orange;
+    background: url("/assets/bg-batten.png");
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px #00000012;
+
+}
+button{
+    margin-top: 2%;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 10px;
+    border-radius: 50px !important;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    width: 100px;
+
+}
+
+button > a{
+    color: #fff !important;
+}
+
+.middle{
+    text-align: center;
+}
+
+#name{
+    margin-bottom: 0%;
+    margin-right: 10px;
+    color: purple;
+}
+
+.n{
+    position: fixed;
+    width:20%;
+    height:10%;
+    z-index:9999;
+    border-radius: 40px;
+    font-size: 18px;
+    color: orange;
+    padding-top: 7px !important;
+} 

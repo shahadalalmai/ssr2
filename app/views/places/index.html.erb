@@ -1,0 +1,60 @@
+<h1>Saudi Seasons Review</h1>
+
+
+<p>Your Place for Sharing Your Valuable Experiences</p>
+
+
+<div class="d-flex flex-wrap justify-content-around ">
+  
+<% @places.each do |place|%>
+
+    <div class="p-2 card " id="p">
+
+            <div class="d-flex flex-column flex-wrap align-items-center ">
+                    
+                    <div class="p-2">
+                    <img src=<%=place.image%> height="200" width="290">
+                    </div>
+
+                    <div class="p-2">
+                    <%= place.name %> @ <%= place.city %>  
+                    </div>
+
+                    <div class="p-2">
+                    <% @users.each do |user| %>
+                        <% if user.id == place.user_id %> Visited By: <%= user.name %>
+                        <% end %>
+                    <% end %>
+                    </div>
+
+                    <div>
+                    <button><%= link_to "Details", place_path(place.id)%></button>
+                    </div>
+
+            </div>
+
+    </div>
+
+<% end %>
+
+</div>
+
+
+
+
+
+<div class="b-section">
+<hr>
+
+<%if !user_signed_in? %>
+    <h1>Become One of Us and Share Your Review!</h1>
+    <button> <%= link_to "Sign Up Now!" , new_user_registration_path %> </button>
+<% else %>
+    <h1>Visit Saudi</h1>
+    <p>Apply for your Saudi Visa and Explore The Arabian Culture and History</p>
+    <button onclick="window.location.href = 'https://www.visitsaudi.com/en';" >Apply Now!</button>
+<% end %>
+
+</div>
+
+

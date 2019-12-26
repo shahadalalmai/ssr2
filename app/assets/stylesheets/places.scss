@@ -1,0 +1,51 @@
+// Place all the styles related to the Places controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+#p{
+    margin-top: 30px !important;
+    box-shadow: 9px 9px 9px #00000012;
+}
+
+.card:hover {
+    background: #fff0f0cb;
+}
+
+.b-section{
+    background: url("bg-batten.png");
+    // background-image: url("light_sss_logo.png");
+    height: 400px;
+}
+
+.b-section > h1{
+margin-top: 7%;
+}
+
+.b-section > button{
+    margin-top: 2%;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    width: 200px !important;
+
+    }
+
+
+
+    .b-section > button > a{
+        color: #fff !important;
+        }
+
+
+.jumbotron{
+    background-color: #f8f9fa !important;
+    
+}

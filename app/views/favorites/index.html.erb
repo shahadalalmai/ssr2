@@ -1,0 +1,38 @@
+<h1>Your Favorites</h1>
+<p>You might consider going to any of the below list</p>
+
+<div class="d-flex flex-wrap justify-content-around ">
+  
+<% @favs.each do |f|%>
+
+    <div class="p-2 card " id="p">
+
+            <div class="d-flex flex-column flex-wrap align-items-center ">
+
+                <% @places.each do |p| %>
+                    <% if p.id == f.place_id %>
+
+                                <div class="p-2">
+                                <img src=<%=p.image%> height="200" width="290">
+                                </div>
+
+                                <div class="p-2">
+                                <%= p.name %> @ <%= p.city %>  
+                                </div>
+
+
+                                <div>
+                                <button><%= link_to "Details", place_path(p.id)%></button>
+                                </div>
+
+                        <% end %>
+                <% end %>
+
+            </div>
+
+    </div>
+
+<% end %>
+
+</div>
+

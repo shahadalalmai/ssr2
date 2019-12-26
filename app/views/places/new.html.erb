@@ -1,0 +1,38 @@
+<h1>New Review</h1>
+
+
+<div class="form-group">
+
+<%= form_for @place, url: {action: "create"} do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    
+    <%= f.label :name, 'Place Name'%><br>
+    <%= f.text_field :name %>
+    <br>
+
+    <%= f.label :desc, 'Review'%><br>
+    <%= f.text_area :desc %>
+    <br>
+
+    <%= f.label :city, 'City'%><br>
+    <%= f.text_field :city %>
+    <br>
+
+    <%= f.label :image, 'Image'%><br>
+    <%= f.text_area :image %>
+    <br>
+
+    <%= f.label :location, 'Location'%><br>
+    <%= f.text_area :location %>
+    <br><br>
+    
+
+    <%= f.submit "Submit" , data: {confirm: "Are you sure?"} , :class => "btn btn-outline-info"%>
+
+    <br>
+    
+
+<% end %>
+</div>
+
+<button> <%= link_to "Back", places_path %> </button>
